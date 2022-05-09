@@ -15,6 +15,8 @@ import {Accordion} from "./Accordion";
 // .catch(err=>{
 // console.log(err);
 // });
+const listItem=["1.5 cups of nondairy milk","2 teaspoons apple cider vinegar or white vinegar", "1 tablespoon of oil","2 cups of flour","2 tablespoons cane sugar","1.5 teaspoons of baking powder", "0.5 teaspoon of baking soda","0.5 of salt","Maple syrup or vegan butter (optional)"];
+const listItems=listItem.map(item=><li>{item}</li>)
 
 function App() {
   return (<>
@@ -34,18 +36,11 @@ function App() {
       name="Source: Pickuplimes.com"
       id="vegan-pancakes-title"  
       />
+      
       <Accordion
         className="ingredients accordion-class"
-        title="Ingredients">
-          <li>1.5 cups of nondairy milk</li>
-          <li>2 teaspoons apple cider vinegar or white vinegar</li>
-          <li>1 tablespoon of oil</li>
-          <li>2 cups of flour</li>
-          <li>2 tablespoons cane sugar</li>
-          <li>1.5 teaspoons of baking powder</li>
-          <li>0.5 teaspoon of baking soda</li>
-          <li>0.5 of salt</li>
-          <li>Maple syrup or vegan butter (optional)</li>
+        title="Ingredients"
+        list={listItems}>
         </Accordion>
 
         <Accordion
@@ -70,7 +65,7 @@ function App() {
       <Accordion
         className="ingredients accordion-class"
         title="Ingredients">
-          <li>0.5 cup of oats</li>
+            <li>0.5 cup of oats</li>
             <li>0.5 cup of soy milk</li>
             <li>1 tbsp of coca powder</li>
             <li>1 tbsp of flaxseeds</li>
@@ -146,9 +141,6 @@ function App() {
       name="Chicken Stir Fry" 
       id="chicken-stir-fry-title"  
       />
-      </section>
-      <section id="dessert">
-        <a href="./dessert.html"><h2>Dessert</h2></a>
       </section>
     </main>
     <footer>
