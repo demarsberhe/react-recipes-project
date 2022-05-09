@@ -87,16 +87,16 @@ for(let i=0; i< accordionTitleElements.length; i++){ //iterates through the arra
 }
 
 
-const updateRecipesUI = data=>{
-  //update breakfast section
-  const breakfast = data.breakfastData;
+// const updateRecipesUI = data=>{
+//   //update breakfast section
+//   const breakfast = data.breakfastData;
 
-  //select two random recipes from the breakfast array
-  let firstBreakfastRecipe = generateRandomRecipe(breakfast.hits);
-  let secondBreakfastRecipe = generateRandomRecipe(breakfast.hits);
+//   //select two random recipes from the breakfast array
+//   let firstBreakfastRecipe = generateRandomRecipe(breakfast.hits);
+//   let secondBreakfastRecipe = generateRandomRecipe(breakfast.hits);
   
   
-  //console.log(breakfast);
+//   //console.log(breakfast);
 
 
-}
+// }
