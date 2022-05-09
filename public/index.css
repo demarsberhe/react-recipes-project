@@ -1,0 +1,441 @@
+#dinner img, #veggie-wrap-container img, #breakfast img {
+  width: 200px;
+  height: 300px;
+}
+
+* {
+  margin: 0px;
+  color: black;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+.selected-border {
+  border: 2px solid gray;
+}
+
+#recipe-link {
+  margin-top: 20px;
+  display: none;
+}
+
+#search {
+  height: 15rem;
+}
+
+#search-selectors {
+  margin-top: 150px;
+}
+#search-selectors h3 {
+  font-size: 50px;
+}
+#search-selectors #recipe-selected {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+#recipe-button {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  background-color: lightgray;
+  font-size: 2rem;
+}
+#recipe-button:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+#try-again {
+  display: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+  background-color: lightgray;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+#try-again:hover {
+  background-color: gray;
+  cursor: pointer;
+}
+
+#recipe-link {
+  font-size: 2rem;
+}
+
+.accordion-class {
+  margin: 0px auto;
+  background-color: lightgrey;
+  border: solid 2px black;
+  border-radius: 0.5rem;
+}
+
+.accordion-body {
+  padding-top: 1rem;
+  border-top: 5px solid;
+  -o-border-image: linear-gradient(to right, white, transparent) 1;
+     border-image: linear-gradient(to right, white, transparent) 1;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.accordion-title {
+  padding: 0.5rem 2rem 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.accordion-title:hover {
+  background-color: gray;
+}
+.accordion-title:after {
+  content: "+";
+  color: black;
+  font-size: 30px;
+  display: flex;
+}
+.accordion-title.active:after {
+  content: "-";
+}
+.accordion-title.active + .accordion-body {
+  display: block;
+}
+
+body {
+  text-align: center;
+  /**parent container centers all text**/
+  background: white;
+}
+
+#header {
+  background: white;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  min-height: 5rem;
+  top: 0;
+  justify-content: center;
+  border-bottom: 1px solid #f4f0f1;
+}
+#header #main-title {
+  margin: auto auto;
+}
+#header #main-title a {
+  text-decoration: none;
+}
+#header nav {
+  position: fixed;
+  right: 5px;
+  top: 15px;
+}
+#header nav ul {
+  display: flex;
+}
+#header nav ul li {
+  margin: 10px;
+  text-decoration: underline;
+}
+#header nav ul li a {
+  color: black;
+}
+#header nav ul li a:hover {
+  color: #e6e6e6;
+  -webkit-text-decoration-color: #e6e6e6;
+          text-decoration-color: #e6e6e6;
+}
+
+ul {
+  list-style: none;
+  /**removes the bullet points from ul li items */
+}
+
+h2 {
+  text-align: center;
+}
+
+footer {
+  background: white;
+  padding: 20px;
+  /*20px of space between the footer container border and content*/
+  border-top: 1px solid #f4f0f1;
+}
+footer #meal-breakfast, footer #meal-lunch, footer #meal-dinner, footer #meal-dessert, footer #email {
+  margin: 10px;
+}
+
+#dessert-title {
+  padding-top: 10px 0px;
+}
+#dessert-title a {
+  text-decoration: none;
+}
+
+ol {
+  padding: 20px;
+}
+
+#breakfast-title {
+  margin-top: 1.5rem;
+  border-top: 1px solid #f4f0f1;
+  border-bottom: none;
+  padding-top: 10px;
+}
+
+#breakfast {
+  z-index: 1;
+  display: flex;
+  /*horizontal layout for breakfast section*/
+  border-top: 1px solid #f4f0f1;
+  border-bottom: 1px solid #f4f0f1;
+  /*statically defined image sizes*/
+}
+#breakfast .steps ol li {
+  margin-left: 20px;
+}
+#vegan-pancakes, #overnight-oats {
+  margin: 20px;
+  width: 50%;
+}
+
+#overnight-oats {
+  margin-right: 100px;
+}
+
+#vegan-pancakes {
+  margin-left: 100px;
+}
+#vegan-pancakes img {
+  width: 300px;
+}
+
+.ingredients {
+  margin-bottom: 10px;
+}
+
+#lunch-title {
+  margin-top: 20px;
+}
+
+#veggie-wrap-container {
+  display: flex;
+  /*horizontal layout of lunch section*/
+  justify-content: center;
+  /*aligns all elements in the center*/
+  border-top: 1px solid #f4f0f1;
+  border-bottom: 1px solid #f4f0f1;
+}
+#veggie-wrap-container figure {
+  margin: 10px;
+}
+#veggie-wrap-container img {
+  /*statically defined image sizes for lunch images*/
+}
+
+#veggie-wrap {
+  margin: auto 3rem;
+}
+
+.lunch-ingredients {
+  height: 50%;
+  margin-top: 7.5rem;
+  width: 30%;
+}
+
+#dinner-title {
+  margin-top: 20px;
+}
+
+#dinner {
+  display: flex;
+  /*horizontally displayed dinner elements*/
+  justify-content: space-around;
+  /*space around each element in the dinner container*/
+  border-top: 1px solid #f4f0f1;
+  border-bottom: 1px solid #f4f0f1;
+}
+#dinner figure {
+  margin: 10px;
+  /*10px of space around each dinner figure element*/
+}
+#dinner figure figcaption:hover {
+  background: white;
+}
+#dinner img {
+  /*statically defined size of dinner img elements*/
+}
+
+#dessert-title {
+  background: white;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0px;
+  text-align: center;
+  padding-left: 10px;
+  border: 1px solid #f4f0f1;
+}
+
+#dessert {
+  background: white;
+  padding: 20px;
+  /*20px of space between the dessert container border and dessert title/content*/
+}
+
+#dessert-header-images {
+  display: flex;
+  /*display images using flexbox*/
+  justify-content: center;
+  /*center dessert images*/
+  margin-top: 50px;
+}
+#dessert-header-images img {
+  /*statically defined image sizes*/
+  width: 300px;
+  height: 200px;
+  margin: 20px 5px;
+}
+#dessert-header-images #oreo-truffles-img {
+  width: 200px;
+  height: 200px;
+}
+
+#dessert-main-content h3 {
+  text-decoration: underline;
+}
+#dessert-main-content img {
+  width: 100%;
+  height: auto;
+}
+#dessert-main-content #oreo-truffles-recipe-iframe {
+  width: 500px;
+  height: 300px;
+}
+
+#dessert-main-content {
+  /*implementation of css-grid*/
+  margin: 20px;
+  /*20px space around table and surrounding html elements (header images and return to home link text*/
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+}
+
+#dessert-main-content figure {
+  /*center the images under the recipe column*/
+  align-self: center;
+  justify-self: center;
+}
+
+#return-home {
+  padding: 15px;
+  text-align: right;
+  text-decoration: underline;
+  background: white;
+  border: 1px solid #f4f0f1;
+}
+#return-home a {
+  color: black;
+}
+#return-home a:hover {
+  color: #e6e6e6;
+  -webkit-text-decoration-color: #e6e6e6;
+          text-decoration-color: #e6e6e6;
+}
+
+@media (max-width: 830px) {
+  #main-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  #header #main-title {
+    font-size: 20px;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+  }
+
+  #breakfast, #veggie-wrap-container, #dinner {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #breakfast figure, #veggie-wrap-container figure, #dinner figure {
+    margin: 20px;
+  }
+
+  #overnight-oats {
+    margin-right: 0px;
+    width: 100%;
+  }
+
+  #vegan-pancakes {
+    margin-left: 0px;
+    width: 100%;
+  }
+  #vegan-pancakes img {
+    margin: 0px;
+    padding: 0px;
+    width: 250px;
+    height: 200px;
+  }
+
+  #dessert-header-images img {
+    width: 100%;
+    height: auto;
+  }
+  #dessert-header-images #brownie-img, #dessert-header-images #oreo-truffles-img {
+    /*statically defined image sizes*/
+    display: none;
+  }
+
+  #dessert-main-content {
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+  }
+  #dessert-main-content img {
+    width: 100%;
+    height: auto;
+  }
+
+  #veggie-wrap {
+    margin-top: 20px;
+  }
+
+  #dessert-title {
+    text-align: center;
+    padding-left: 0px;
+  }
+
+  #return-home {
+    text-align: center;
+  }
+
+  #search-selectors {
+    margin-top: 150px;
+  }
+  #search-selectors h3 {
+    font-size: 40px;
+  }
+  #search-selectors #recipe-selected {
+    font-size: 30px;
+  }
+  #search-selectors button {
+    margin-top: 20px;
+  }
+
+  .lunch-ingredients {
+    margin-top: 2.5rem;
+    width: 100%;
+  }
+}

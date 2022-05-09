@@ -1,0 +1,161 @@
+@use 'helpers/variables';
+@use 'helpers/mixins';
+
+*{
+  margin: 0px;
+  color: black;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: variables.$font-family;
+}
+.selected-border{
+  border: 2px solid gray;
+}
+#recipe-link{
+  margin-top: 20px;
+  display: none;
+}
+#search{
+  height: 15rem;
+}
+#search-selectors{
+  margin-top: 150px;
+  h3{
+    font-size: 50px;
+  }
+  #recipe-selected{
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+
+}
+
+#recipe-button{
+  @include mixins.button-style;
+  font-size: 2rem;
+}
+
+#try-again{
+  display: none;
+  @include mixins.button-style;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+#recipe-link{
+  font-size: 2rem;
+}
+
+.accordion-class{
+  @include mixins.base-accordion-style; //mixin included
+}
+.accordion-body{
+  padding-top: 1rem;
+  border-top: 5px solid;
+  border-image: linear-gradient(to right, variables.$background-color, transparent) 1;
+  display: none;
+}
+.active{
+  display: block;
+}
+.accordion-title{
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    cursor: pointer;
+   
+    &:hover{
+      background-color: gray;
+    }
+    &:after{
+      content: '+';
+      color: black;
+      font-size: 30px;
+      display: flex;
+
+    }
+    &.active:after{
+      content: '-';
+
+    }
+    &.active + .accordion-body{ //when the accordion title includes the class active, apply display: block styling to the adjancent sibling accordion-body
+      display: block;
+
+    }
+  }
+ 
+body{
+  text-align: center;/**parent container centers all text**/
+  background: variables.$background-color; //@use requires use of namespace
+}
+#header{
+  background: variables.$header-background-color;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  min-height: 5rem;
+  top: 0;
+  justify-content: center;
+  border-bottom: variables.$border-style;
+  #main-title{
+    margin: auto auto;
+    a{
+      text-decoration: none;
+    }
+  }
+  nav {
+    position: fixed;
+    right: 5px;
+    top: 15px;
+    
+  ul{
+    display: flex;
+    li{
+      margin: 10px;
+      text-decoration: underline;
+      a{
+        color: black;
+        &:hover{
+          color: variables.$hover-color;
+          text-decoration-color: variables.$hover-color;
+
+      }
+      
+      }
+    }
+  
+    
+  }
+}
+
+
+}
+ul{
+  list-style: none; /**removes the bullet points from ul li items */
+}
+h2{
+  text-align: center;
+}
+
+footer{
+  background: variables.$footer-background-color;
+  padding: 20px; /*20px of space between the footer container border and content*/
+  border-top: variables.$border-style;
+  #meal-breakfast, #meal-lunch, #meal-dinner, #meal-dessert, #email{
+    margin: 10px;
+  }
+
+}
+#dessert-title{
+  padding-top: 10px 0px;
+  a{
+    text-decoration: none;
+  }
+}
+
+
+ol{
+  padding: 20px;
+}
+
+
