@@ -15,21 +15,17 @@ export class App extends React.Component{
       dataisLoaded: false };
   }
 
-  componentDidMount(){
-    getRecipes()
-    .then(data=>{
-     this.setState({recipes:data,
-    dataisLoaded: true });
-     
-    })
-    .catch(err=>{
-    console.log(err);
-    });
-
-  }
   render(){
-   let dinnerCollection=[];
-
+      getRecipes()
+      .then(data=>{
+       this.setState({recipes:data,
+      dataisLoaded: true });
+       
+      })
+      .catch(err=>{
+      console.log(err);
+      });
+  
 if(!this.state.dataisLoaded){
   return <h1>Loading...</h1>
 }
