@@ -8,6 +8,8 @@
   justify-content: space-around; /*space around each element in the dinner container*/
   border-top: variables.$border-style;
   border-bottom: variables.$border-style;
+  padding-top: 20px;
+  padding-bottom: 20px;
   figure{
     margin: 10px; /*10px of space around each dinner figure element*/
     figcaption:hover{

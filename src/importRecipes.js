@@ -1,8 +1,8 @@
 
 //this file imports recipes using the edamam api
 const base = 'https://api.edamam.com/api/recipes/v2';
-const key = '7dcb723c5d1ec84944e262dd8d1a9a9f';
-const id = '3d9b2d86';
+const key = 'efe1d8e72abf065354cba9ae607bd560';
+const id = '4ce43f84';
 
 export const getRecipes = async ()=>{
   //request breakfast data
@@ -27,3 +27,34 @@ export const getRecipes = async ()=>{
 
 
 
+
+// data.breakfastData
+  //   const breakfastCollection: {
+  //     URL:data.breakfastData.hits.recipe.url,
+  //    imgURL: meal.recipe.images.SMALL.url,
+  //    name: meal.recipe.label,
+  //    id:meal.recipe.label
+
+  //   }
+    
+    
+     
+  //    )
+     
+  
+
+
+  // const lunchCollection = data.lunchData.hits.map(meal=>{
+  //   return {URL:meal.recipe.url,
+  //     imgURL: meal.recipe.images.SMALL.url,
+  //     name: meal.recipe.label,
+  //     id:meal.recipe.label
+  //     }
+  //   })
+  //   const dinnerCollection = data.dinnerData.hits.map(meal=>{
+  //   return {URL:meal.recipe.url,
+  //     imgURL: meal.recipe.images.SMALL.url,
+  //     name: meal.recipe.label,
+  //     id:meal.recipe.label
+  //     }
+  //   })

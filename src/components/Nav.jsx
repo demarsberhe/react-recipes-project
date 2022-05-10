@@ -9,7 +9,6 @@ class Nav extends React.Component{
         <li><a href="#breakfast">Breakfast</a></li>
         <li><a href="#lunch">Lunch</a></li>
         <li><a href="#dinner">Dinner</a></li>
-        <li><a href="dessert.html">Dessert</a></li>
       </ul>
     </nav>
   </div>);

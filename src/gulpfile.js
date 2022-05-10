@@ -19,7 +19,7 @@ function compilescss(){
   .pipe(sass())// run sass
   .pipe(prefix()) //add all required vendor prefixes
   //.pipe(cssnano()) // compress files
-  .pipe(dest('css')) // exit the pipe
+  .pipe(dest('../public')) // exit the pipe
   // the destination the compiled, prefixed, and compressed css should be pipped out to
   // final css will be saved to the css folder
 }
