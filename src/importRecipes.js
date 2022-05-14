@@ -1,8 +1,8 @@
 
 //this file imports recipes using the edamam api
 const base = 'https://api.edamam.com/api/recipes/v2';
-const key = 'efe1d8e72abf065354cba9ae607bd560';
-const id = '4ce43f84';
+const key = '86656e26403524f46df99ba68baf0350';
+const id = '4ea6f9bc';
 
 export const getRecipes = async ()=>{
   //request breakfast data

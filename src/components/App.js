@@ -160,15 +160,4 @@ if(!this.state.dataisLoaded){
   
 }
 
-  {/* {breakfastCollection = this.state.recipes.breakfastData.hits.map(element=>{ 
-      return <Recipe
-                URL={element.recipe.url}
-                imgURL={element.recipe.images.SMALL.url}
-                name={element.recipe.label}
-                id={element.recipe.label}/> })}
-        {lunchCollection = this.state.recipes.lunchData.hits.map(element=>{ 
-      return <Recipe
-                URL={element.recipe.url}
-                imgURL={element.recipe.images.SMALL.url}
-                name={element.recipe.label}
-                id={element.recipe.label}/> })} */}
+ 

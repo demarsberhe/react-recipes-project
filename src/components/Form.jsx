@@ -15,13 +15,15 @@ export function Form(){
     event.preventDefault();
 
   }
-    return(<>
-       <p>{headingText}</p>
-    <form onSubmit={handleSubmit}>
-      <input type="text" id="nameField" placeholder="Enter your name" onChange={handleTextUpdate}/>
-      <input type="text" id="email" placeholder="Enter email address"/>
-      <button type="submit" id="submitButton">Submit</button>
-</form>
-</>);
+    return(
+      <>
+        <p>{headingText}</p>
+        <form onSubmit={handleSubmit}>
+          <input type="text" id="nameField" placeholder="Enter your name" onChange={handleTextUpdate}/>
+          <input type="text" id="email" placeholder="Enter email address"/>
+          <button type="submit" id="submitButton">Submit</button>
+        </form>
+      </>
+    );
   
 }
