@@ -1,8 +1,8 @@
-
+const{REACT_APP_API_KEY, REACT_APP_APP_ID}=process.env;
 //this file imports recipes using the edamam api
 const base = 'https://api.edamam.com/api/recipes/v2';
-const key = 'efe1d8e72abf065354cba9ae607bd560';
-const id = '4ce43f84';
+const key = REACT_APP_API_KEY;
+const id = REACT_APP_APP_ID;
 
 export const getRecipes = async ()=>{
   //request breakfast data
