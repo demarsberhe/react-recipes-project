@@ -1,14 +1,16 @@
 import React from "react";
+import styles from "./RecipeOverview.module.scss";
 
-export class Recipe extends React.Component{
-  constructor(props){
-    super(props);
-  }
-  render(){
+export function Recipe(props){
     return(
-    <figure>
-      <a href={this.props.URL}><img src={this.props.imgURL} alt={this.props.name}/></a>
-      <a href={this.props.URL}><figcaption id={this.props.name}>Source: {this.props.id}</figcaption></a>
-    </figure>)
-  }
+      <div className={styles.mealContainer}>
+        <div className={styles.recipeOverviewCard}>
+        <div className={styles.recipeOverview}>
+          <a href={props.URL} target="_blank"><img src={props.imgURL} alt={props.name} className={styles.recipeImg}/></a>
+          <p>{props.name}</p>
+      </div>
+    </div>
+  </div>
+)
+  
 }

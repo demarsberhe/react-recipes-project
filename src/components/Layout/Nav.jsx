@@ -1,14 +1,16 @@
 import React from "react"
+import Link from "next/link";
+import styles from "./Nav.module.scss";
 
 export class Nav extends React.Component{
   render(){
-    return (<div id="header">
-    <h1 id="main-title"><strong><a href='index.html'>Best Recipes</a></strong></h1>
+    return (<div id={styles.header}>
+    <Link href="/"><h1 id={styles.mainTitle}>Best Recipes</h1></Link>
     <nav> 
-      <ul>
-        <li><a href="#breakfast">Breakfast</a></li>
-        <li><a href="#lunch">Lunch</a></li>
-        <li><a href="#dinner">Dinner</a></li>
+      <ul className={styles.navList}>
+        <Link href="#breakfast"><li className={styles.navListItem}>Breakfast</li></Link>
+        <Link href="#lunch"><li className={styles.navListItem}>Lunch</li></Link>
+        <Link href="#dinner"><li className={styles.navListItem}>Dinner</li></Link>
       </ul>
     </nav>
   </div>);

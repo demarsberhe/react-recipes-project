@@ -1,0 +1,47 @@
+.container{
+  display: flex;
+  justify-content: space-around;
+  .card {
+    width: 300px;
+    height: auto;
+    text-align: center;
+    img{
+      width: 100%;
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
+.moreDetails{
+  background-color: powderblue;
+  color: white;
+  padding: 15px;
+  border-radius: 25px;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media(max-width: 630px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    .card{
+      margin: 10px auto;
+      width: 350px;
+      height: auto;
+      img{
+        width: 100%;
+      }
+    }
+  }
+   
+}
+@media(max-width: 890px) and (min-width: 875px){
+  .card{
+    width: 200px;
+  }
+
+}

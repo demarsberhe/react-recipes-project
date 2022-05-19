@@ -2,15 +2,15 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 
-const startFirebase = ()=>{
+export const startFirebase = ()=>{
   const firebaseConfig = {
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID
+    apiKey: "AIzaSyBCcvRHGhIOmUoYuuvA_eQHYl_XBkJ3Ibo",
+    authDomain: "recipes-project-174c0.firebaseapp.com",
+    databaseURL: "https://recipes-project-174c0-default-rtdb.firebaseio.com",
+    projectId: "recipes-project-174c0",
+    storageBucket: "recipes-project-174c0.appspot.com",
+    messagingSenderId: "691926625387",
+    appId: "1:691926625387:web:8440b661e741090aea952e"
 
   };
  
@@ -19,5 +19,5 @@ const startFirebase = ()=>{
 
 }
 
-export default startFirebase;
+
 

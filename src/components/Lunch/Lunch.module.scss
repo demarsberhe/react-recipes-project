@@ -1,0 +1,28 @@
+.lunchContainer{
+  display: flex;
+  flex-direction: row;
+  height: 300px;
+  height: auto;
+  text-align: center;
+
+}
+
+.recipeOverview{
+  width: 300px;
+  height: auto;
+  text-align: center;
+  background-color: beige;
+  border-radius: 25px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  .recipeImg{
+    width: 80%;
+    height: auto;
+    &:hover{
+      opacity:0.5;
+      cursor: pointer;
+    }
+  }
+  
+}

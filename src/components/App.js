@@ -1,66 +1,172 @@
 //import '.../public/index.css';
 //import {getRecipes} from "../importRecipes";
-import {Nav} from "./Nav";
 // import {Generator} from "./Recipe-Generator";
-// import {Recipe} from "./Recipe-Overview";
-// import {Form} from "./Form";
 // import {Accordion} from "./Accordion";
-import React from "react";
-import startFirebase from "./config";
+import {Featured} from "./Featured/Featured";
+import {startFirebase} from "./config";
 import {ref, onValue} from "firebase/database";
+import { BreakfastRecipesContext } from "./Contexts/BreakfastRecipesContext";
+import BreakfastContainer from "./Breakfast/Breakfast";
+import {LunchRecipesContext} from "./Contexts/LunchDataContext";
+import {DinnerRecipesContext} from "./Contexts/DinnerDataContext";
+import DinnerContainer from "./Dinner/Dinner";
+import LunchContainer from "./Lunch/Lunch";
+import React, {useEffect, useState} from "react";
+import {FeaturedRecipesContext} from "./Contexts/FeaturedContext";
 
-const db=startFirebase();
+export const db=startFirebase();
+export function App(){
+  const [breakfastRecipes, setBreakfastRecipes]=useState([]);
+  const [lunchRecipes, setLunchRecipes]=useState([]);
+  const [dinnerRecipes, setDinnerRecipes]=useState([]);
+  const [allRecipes, setAllRecipes]=useState([]);
+  const[isDataLoaded, setDataIsLoaded]=useState(false);
 
-export class App extends React.Component{
-  constructor(props){
-    super(props);
-    this.state={
-      breakfastRecipes:[],
-      lunchRecipes: [],
-      dinnerRecipes:[],
-      dataisLoaded: false };
-  }
-  componentDidMount(){
-    const dbRefBreakfast = ref(db, "breakfastData"); //this retrieves a reference to the breakfastData colleciton within the database
+  const dbRefBreakfast = ref(db, "breakfastData"); //this retrieves a reference to the breakfastData colleciton within the database
+  const dbRefLunch = ref(db, "lunchData"); //this retrieves a reference to the breakfastData colleciton within the database
+  const dbRefDinner = ref(db, "dinnerData"); //this retrieves a reference to the breakfastData colleciton within the database
+
+  useEffect(()=>{
     onValue(dbRefBreakfast, snapshot=>{ //snapshot returns the current array of data stored in the breakfastData array
       let breakfastArray=[];
       snapshot.forEach(childSnapshot=>{
         breakfastArray.push(childSnapshot.val()); //this iterates through each value in the breakfastData array and pushes each object to the breakfastArray array
-      })
-      this.setState({breakfastRecipes: breakfastArray}) //this makes the breakfast data available within the scope of the application
-    }
+        }
+      )
+      setBreakfastRecipes(breakfastArray) //this makes the breakfast data available within the scope of the application
+      }
     )
-    const dbRefLunch = ref(db, "lunchData"); //this retrieves a reference to the lunchData colleciton within the database
-    onValue(dbRefLunch, snapshot=>{ //snapshot returns the current array of data stored in the lunchData array
+    onValue(dbRefLunch, snapshot=>{ //snapshot returns the current array of data stored in the breakfastData array
       let lunchArray=[];
       snapshot.forEach(childSnapshot=>{
-        lunchArray.push(childSnapshot.val()); //this iterates through each value in the lunchData array and pushes each object to the lunchArray array
-      })
-      this.setState({lunchRecipes: lunchArray}) //this makes the lunch data available within the scope of the application
-    }
-    )
-    const dbRefDinner = ref(db, "dinnerData"); //this retrieves a reference to the dinnertData colleciton within the database
-    onValue(dbRefDinner, snapshot=>{ //snapshot returns the current array of data stored in the dinnerData array
+        lunchArray.push(childSnapshot.val()); //this iterates through each value in the breakfastData array and pushes each object to the breakfastArray array
+        }
+      )
+      setLunchRecipes(lunchArray) //this makes the breakfast data available within the scope of the application
+        }
+      )
+    onValue(dbRefDinner, snapshot=>{ //snapshot returns the current array of data stored in the breakfastData array
       let dinnerArray=[];
       snapshot.forEach(childSnapshot=>{
-        dinnerArray.push(childSnapshot.val()); //this iterates through each value in the dinnerData array and pushes each object to the dinnerArray array
-      })
-      this.setState({dinnerRecipes: dinnerArray}) //this makes the dinner data available within the scope of the application
-    }
+          dinnerArray.push(childSnapshot.val()); //this iterates through each value in the breakfastData array and pushes each object to the breakfastArray array
+      }
     )
-    this.setState({dataisLoaded:true}) //all data has been rendered, update the state to true
-  }
-
-  render(){
-    if(!this.state.dataisLoaded){
-      return <h1>Loading...</h1>
+    setDinnerRecipes(dinnerArray) //this makes the breakfast data available within the scope of the application
     }
-    return(
-    <>
-     <Nav />
-    </>)
-  }
+  )
+  setAllRecipes([breakfastRecipes, lunchRecipes, dinnerRecipes]);
+  setDataIsLoaded(true);
+}, []) //this ensures useEffect() is only executed on page load 
+
+if(!isDataLoaded){
+  return (<h1>Loading...</h1>)
 }
+  return (
+    <>
+    <FeaturedRecipesContext.Provider value={allRecipes}>
+      <Featured/>
+    </FeaturedRecipesContext.Provider>
+    <BreakfastRecipesContext.Provider value={breakfastRecipes}>
+      <BreakfastContainer/>
+    </BreakfastRecipesContext.Provider>
+    <LunchRecipesContext.Provider value={lunchRecipes}>
+      <LunchContainer/>
+    </LunchRecipesContext.Provider>
+    <DinnerRecipesContext.Provider value={dinnerRecipes}>
+      <DinnerContainer/>
+    </DinnerRecipesContext.Provider>
+    </>
+  )
+//   if(!dataisLoaded){
+//   return <h1>Loading...</h1>
+// }
+// else{
+//   return (
+//     <>
+//       <BreakfastContainer/>
+//       <LunchContainer/>
+//       <DinnerContainer/>
+//     </>
+//   )
+//   }
+
+  //const [dataisLoaded, setDataIsLoaded]=useState(false);
+
+// if(!dataisLoaded){
+//   return <h1>Loading...</h1>
+// }
+// else{
+//   return (
+//     <>
+//       <BreakfastContainer/>
+//       <LunchContainer/>
+//       <DinnerContainer/>
+//     </>
+//   )
+//   }
+}
+
+// export class App extends React.Component{
+//   constructor(props){
+//     super(props);
+//     this.state={
+//       breakfastRecipes:[],
+//       lunchRecipes: [],
+//       dinnerRecipes:[],
+//       dataisLoaded: false };
+//   }
+//   componentDidMount(){
+//     const dbRefBreakfast = ref(db, "breakfastData"); //this retrieves a reference to the breakfastData colleciton within the database
+//     onValue(dbRefBreakfast, snapshot=>{ //snapshot returns the current array of data stored in the breakfastData array
+//       let breakfastArray=[];
+//       snapshot.forEach(childSnapshot=>{
+//         breakfastArray.push(childSnapshot.val()); //this iterates through each value in the breakfastData array and pushes each object to the breakfastArray array
+//       })
+//       this.setState({breakfastRecipes: breakfastArray}) //this makes the breakfast data available within the scope of the application
+//     }
+//     )
+//     const dbRefLunch = ref(db, "lunchData"); //this retrieves a reference to the lunchData colleciton within the database
+//     onValue(dbRefLunch, snapshot=>{ //snapshot returns the current array of data stored in the lunchData array
+//       let lunchArray=[];
+//       snapshot.forEach(childSnapshot=>{
+//         lunchArray.push(childSnapshot.val()); //this iterates through each value in the lunchData array and pushes each object to the lunchArray array
+//       })
+//       this.setState({lunchRecipes: lunchArray}) //this makes the lunch data available within the scope of the application
+//     }
+//     )
+//     const dbRefDinner = ref(db, "dinnerData"); //this retrieves a reference to the dinnertData colleciton within the database
+//     onValue(dbRefDinner, snapshot=>{ //snapshot returns the current array of data stored in the dinnerData array
+//       let dinnerArray=[];
+//       snapshot.forEach(childSnapshot=>{
+//         dinnerArray.push(childSnapshot.val()); //this iterates through each value in the dinnerData array and pushes each object to the dinnerArray array
+//       })
+//       this.setState({dinnerRecipes: dinnerArray}) //this makes the dinner data available within the scope of the application
+//     }
+//     )
+//     this.setState({dataisLoaded:true}) //all data has been rendered, update the state to true
+//   }
+  
+
+//   render(){
+//     if(!this.state.dataisLoaded){
+//       return <h1>Loading...</h1>
+//     }
+//     return(
+//     <>
+//     {/* <div><DinnerContainer 
+//     dinnerName={this.state.dinnerRecipes[0].name}
+//     dinnerURL = {this.state.dinnerRecipes[0].URL}
+//     dinnerimgURL = {this.state.dinnerRecipes[0].imgURL}
+//     dinnerid = {this.state.dinnerRecipes[0].id}
+//     /></div> */}
+//     {/* <Featured/>
+//     <BreakfastRecipesContext.Provider value={this.state.breakfastRecipes}>
+//       <BreakfastContainer/>
+//     </BreakfastRecipesContext.Provider> */}
+    
+//     </>)
+//   }
+//}
 //      
 //       <Generator />
 //       <main>
@@ -182,8 +288,5 @@ export class App extends React.Component{
 //         </div>
 //         </section>
 //       </main>
-//       <footer>
-//         <Form/>
-//       </footer>
 //       </>);
 

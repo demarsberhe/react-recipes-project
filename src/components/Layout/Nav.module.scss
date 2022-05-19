@@ -1,0 +1,52 @@
+@use '../../../styles/scss/helpers/variables';
+@use '../../../styles/scss/helpers/mixins';
+@use 'sass:map';
+#header{
+  background: variables.$header-background-color;
+  display: flex;
+  //position: fixed;
+  width: 100%;
+  min-height: 5rem;
+  //top: 0;
+  justify-content: center;
+  border-bottom: variables.$border-style;
+  #mainTitle{
+    margin: auto auto;
+    text-decoration: none;
+    &:hover{
+      cursor: pointer;
+    }
+    
+  }
+  nav {
+    // position: fixed;
+    // right: 5px;
+    // top: 15px;
+    
+  .navList{
+    display: flex;
+    list-style: none; /**removes the bullet points from ul li items */
+    .navListItem{
+      margin: 10px;
+      color: black;
+        &:hover{
+          color: variables.$hover-color;
+          text-decoration-color: variables.$hover-color;
+          cursor: pointer;
+      }
+       
+    }
+  
+  }
+}
+
+
+}
+@media(max-width: map.get(variables.$breakpoints,'medium')){
+  #header #mainTitle{
+    font-size: 20px;
+    position: fixed;
+    top: 30px;
+    left: 20px;
+  }
+}

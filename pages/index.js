@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import {App} from "../src/components/App";
 
-class Homepage extends React.Component{
-  render(){
+//import styles from "../styles/Homepage.module.scss";
+
+export default function Homepage(){
     return (
-    <h1>The Home Page</h1>
-   
+      <App/>
     )
-  }
+  
 }
-export default Homepage;
+

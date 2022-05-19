@@ -1,0 +1,78 @@
+@use 'helpers/variables';
+
+#dessert-title{
+  background: variables.$header-background-color;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  top: 0px;
+  text-align: center;
+  padding-left: 10px;
+  border: variables.$border-style;
+
+}
+#dessert{
+  background: variables.$dessert-background-color;
+  padding: 20px; /*20px of space between the dessert container border and dessert title/content*/
+}
+#dessert-header-images{
+  display: flex; /*display images using flexbox*/
+  justify-content: center; /*center dessert images*/
+  margin-top: 50px;
+  img{ /*statically defined image sizes*/
+    width: 300px;
+    height: 200px;
+    margin: 20px 5px;
+  }
+  #oreo-truffles-img{
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+#dessert-main-content {
+  h3{
+    text-decoration: underline;
+  }
+  img{
+    width: 100%;
+    height: auto;
+  }
+  #oreo-truffles-recipe-iframe{
+    width: 500px;
+    height: 300px;
+
+  }
+}
+  
+
+#dessert-main-content{/*implementation of css-grid*/
+  margin: 20px;/*20px space around table and surrounding html elements (header images and return to home link text*/
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-row-gap: 50px;
+  grid-column-gap: 50px;
+  
+}
+#dessert-main-content figure{ /*center the images under the recipe column*/
+  align-self: center;
+  justify-self: center;
+}
+#return-home{
+  padding: 15px;
+  text-align: right;
+  text-decoration: underline;
+  background: variables.$footer-background-color;
+  border: variables.$border-style;
+  a{
+    color: black;
+    &:hover{
+      color: variables.$hover-color;
+      text-decoration-color: variables.$hover-color;
+
+  }
+  
+  }
+}
