@@ -54,7 +54,7 @@ export function App(){
     setDinnerRecipes(dinnerArray) //this makes the breakfast data available within the scope of the application
     }
   )
-  setAllRecipes([breakfastRecipes, lunchRecipes, dinnerRecipes]);
+  setAllRecipes([...breakfastRecipes, ...lunchRecipes, ...dinnerRecipes]);
   setDataIsLoaded(true);
 }, []) //this ensures useEffect() is only executed on page load 
 
