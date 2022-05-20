@@ -6,7 +6,7 @@ function Layout(props){
       <>
         <Nav/>
         <main>{props.children}</main>
-        
+        <Form/>
       </>
     )
   }
