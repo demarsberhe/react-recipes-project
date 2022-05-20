@@ -6,23 +6,25 @@ import  Link from "next/link";
 export default function BreakfastContainer() {
   const breakfastRecipes = useContext(BreakfastRecipesContext);
     return(
-    <>
-    <h2 id="breakfast">Breakfast</h2>
+    <div className={styles.container}>
+      <h2 className={styles.breakfastTitle}>Breakfast</h2>
       <div className={styles.breakfastContainer}>
-      {breakfastRecipes.map(recipe=>{
+      {breakfastRecipes.filter(recipe=>{
+        return (recipe.id > 2) && (recipe.id <7) 
+      }).map(renderRecipe=>{
         return <Recipe
-          name={recipe.name}
-          imgURL={recipe.imgURL}
-          key={"breakfast"+recipe.id}
-          URL={recipe.URL}
-        />
-      }).filter((renderRecipe, index)=>{
-        return index < 5;
-
-      })
-    } 
+          name={renderRecipe.name}
+          imgURL={renderRecipe.imgURL}
+          key={"breakfast"+renderRecipe.id}
+          URL={renderRecipe.URL}
+          id={renderRecipe.id}
+        />}
+      )
+  } 
     </div>
-    <Link href="/breakfast" className="seeMore">See More</Link>
-  </>
+    <div className={styles.seeMore}>
+      <Link href="/breakfast">See More</Link>
+    </div>
+  </div>
   )
 }

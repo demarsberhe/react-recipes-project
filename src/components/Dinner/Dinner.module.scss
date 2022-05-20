@@ -1,27 +1,24 @@
 .dinnerContainer{
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
-  height: 300px;
-  height: auto;
   text-align: center;
-
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
 }
-.recipeOverview{
-  width: 300px;
-  height: auto;
-  text-align: center;
-  background-color: beige;
-  border-radius: 25px;
-  padding-top: 20px;
-  padding-bottom: 10px;
+.seeMore{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+}
+.dinnerTitle{
+  margin-left: 20px;
+}
 
-  .recipeImg{
-    width: 80%;
-    height: auto;
-    &:hover{
-      opacity:0.5;
-      cursor: pointer;
-    }
+@media (max-width: 630px){
+  .dinnerContainer{
+    flex-direction: column;
+    
   }
-  
 }
