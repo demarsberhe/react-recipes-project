@@ -2,27 +2,25 @@
 @use '../../styles/scss/helpers/mixins';
 @use 'sass:map';
 #header{
-  background: variables.$header-background-color;
+  background-color: variables.$header-background-color;
   display: flex;
-  //position: fixed;
   width: 100%;
-  min-height: 5rem;
-  //top: 0;
-  justify-content: center;
+  min-height: 5.5rem;
   border-bottom: variables.$border-style;
+  position: fixed;
+  z-index: 5;
+
   #mainTitle{
     margin: auto auto;
     text-decoration: none;
     &:hover{
       cursor: pointer;
     }
-    
   }
   nav {
-    // position: fixed;
-    // right: 5px;
-    // top: 15px;
-    
+    position: fixed;
+    top: 15px;
+    right: 5px;
   .navList{
     display: flex;
     list-style: none; /**removes the bullet points from ul li items */

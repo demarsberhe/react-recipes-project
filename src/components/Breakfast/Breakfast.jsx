@@ -20,9 +20,9 @@ export default function BreakfastContainer() {
         return index < 5;
 
       })
-    }
-      <Link href="/breakfast">See More</Link>
+    } 
     </div>
+    <Link href="/breakfast" className="seeMore">See More</Link>
   </>
   )
 }

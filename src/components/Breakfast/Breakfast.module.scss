@@ -1,7 +1,11 @@
 .breakfastContainer{
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   text-align: center;
   margin-bottom: 50px;
+}
+.seeMore{
+  margin: auto;
 }
 
