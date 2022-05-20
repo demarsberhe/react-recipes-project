@@ -3,12 +3,6 @@ import styles from "./Featured.module.scss";
 import {FeaturedRecipesContext} from "../Contexts/FeaturedContext";
 
 export function Featured(){
-  const allRecipes=useContext(FeaturedRecipesContext);
-  const favoriteRecipes = allRecipes.filter(recipe=>{
-    return recipe.favorite === "true";
-    
-  })
-  console.log(favoriteRecipes);
   return(
     <>
       <div className={styles.featured}>

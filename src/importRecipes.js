@@ -28,33 +28,3 @@ export const getRecipes = async ()=>{
 
 
 
-// data.breakfastData
-  //   const breakfastCollection: {
-  //     URL:data.breakfastData.hits.recipe.url,
-  //    imgURL: meal.recipe.images.SMALL.url,
-  //    name: meal.recipe.label,
-  //    id:meal.recipe.label
-
-  //   }
-    
-    
-     
-  //    )
-     
-  
-
-
-  // const lunchCollection = data.lunchData.hits.map(meal=>{
-  //   return {URL:meal.recipe.url,
-  //     imgURL: meal.recipe.images.SMALL.url,
-  //     name: meal.recipe.label,
-  //     id:meal.recipe.label
-  //     }
-  //   })
-  //   const dinnerCollection = data.dinnerData.hits.map(meal=>{
-  //   return {URL:meal.recipe.url,
-  //     imgURL: meal.recipe.images.SMALL.url,
-  //     name: meal.recipe.label,
-  //     id:meal.recipe.label
-  //     }
-  //   })

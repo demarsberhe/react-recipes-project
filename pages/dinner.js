@@ -19,13 +19,12 @@ export default function Dinner(){
     setDataIsLoaded(true);
     }
   )
-  })
+  }, [])
   if(!isDataLoaded){
     return <h1>Loading...</h1>
   }
     return(
     <>
-      <h1>Dinner Recipes</h1>
       <DinnerRecipesContext.Provider value={dinnerRecipes}>
         <DinnerOverview/>
       </DinnerRecipesContext.Provider>

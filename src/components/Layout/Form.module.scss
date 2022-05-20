@@ -1,10 +1,7 @@
-@use '../../../styles/scss/helpers/variables';
-@use '../../../styles/scss/helpers/mixins';
-
 .footer{
-  background: variables.$footer-background-color;
+  background: #efdecd;
   //padding: 20px; /*20px of space between the footer container border and content*/
-  border-top: variables.$border-style;
+  border-top: 1px solid #f4f0f1;
   //position: fixed;
   width: 100%;
   //bottom: 0;

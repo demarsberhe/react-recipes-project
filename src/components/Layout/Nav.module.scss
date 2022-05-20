@@ -1,5 +1,5 @@
-@use '../../../styles/scss/helpers/variables';
-@use '../../../styles/scss/helpers/mixins';
+@use '../../styles/scss/helpers/variables';
+@use '../../styles/scss/helpers/mixins';
 @use 'sass:map';
 #header{
   background: variables.$header-background-color;
@@ -42,7 +42,7 @@
 
 
 }
-@media(max-width: map.get(variables.$breakpoints,'medium')){
+@media(max-width: 830px){
   #header #mainTitle{
     font-size: 20px;
     position: fixed;

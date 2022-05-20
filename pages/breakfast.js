@@ -20,13 +20,12 @@ export default function Breakfast(){
       setDataIsLoaded(true);
       }
     )
-  })
+  }, [])
   if(!isDataLoaded){
     return <h1>Loading...</h1>
   }
     return(
     <>
-      <h1>Breakfast Recipes</h1>
       <BreakfastRecipesContext.Provider value={breakfastRecipes}>
         <BreakfastOverview/>
       </BreakfastRecipesContext.Provider>

@@ -19,13 +19,12 @@ export default function Lunch(){
       setDataIsLoaded(true);
         }
       )
-  })
+  },[])
     if(!isDataLoaded){
       return <h1>Loading...</h1>
     }
     return(
       <>
-        <h1>Lunch Recipes</h1>
         <LunchRecipesContext.Provider value={lunchRecipes}>
           <LunchOverview/>
         </LunchRecipesContext.Provider>
