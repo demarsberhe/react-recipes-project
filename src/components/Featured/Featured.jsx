@@ -1,6 +1,6 @@
-import React, {useContext} from "react";
+
 import styles from "./Featured.module.scss";
-import {FeaturedRecipesContext} from "../Contexts/FeaturedContext";
+
 
 export function Featured(){
   return(

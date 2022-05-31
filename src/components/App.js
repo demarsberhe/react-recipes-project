@@ -8,7 +8,6 @@ import {DinnerRecipesContext} from "./Contexts/DinnerDataContext";
 import DinnerContainer from "./Dinner/Dinner";
 import LunchContainer from "./Lunch/Lunch";
 import React, {useEffect, useState} from "react";
-import {FeaturedRecipesContext} from "./Contexts/FeaturedContext";
 
 export const db=startFirebase();
 export function App(){
@@ -50,7 +49,6 @@ export function App(){
     setDinnerRecipes(dinnerArray) //this makes the breakfast data available within the scope of the application
     }
   )
-  setAllRecipes([...breakfastRecipes, ...lunchRecipes, ...dinnerRecipes]);
   setDataIsLoaded(true);
 }, []) //this ensures useEffect() is only executed on page load 
 
@@ -59,9 +57,7 @@ if(!isDataLoaded){
 }
   return (
     <>
-    <FeaturedRecipesContext.Provider value={allRecipes}>
-      <Featured/>
-    </FeaturedRecipesContext.Provider>
+    <Featured/>
     <BreakfastRecipesContext.Provider value={breakfastRecipes}>
       <BreakfastContainer/>
     </BreakfastRecipesContext.Provider>

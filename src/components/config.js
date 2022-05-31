@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
-// Your web app's Firebase configuration
+// web app's Firebase configuration
 
 export const startFirebase = ()=>{
   const firebaseConfig = {
@@ -14,7 +14,8 @@ export const startFirebase = ()=>{
 
   };
  
-  const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig); //this initializes the SDK(software development kit) that will be used in the application
+  //this creates a firebase app instance using the configuration of the created instances
   return getDatabase(app)
 
 }

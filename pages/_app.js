@@ -12,4 +12,4 @@ function App({Component, pageProps}){ //root component rendered by Next.js
     </Layout>
     )
 }
-export default App
+export default App;
